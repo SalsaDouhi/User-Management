@@ -4,7 +4,7 @@ import com.gestiondeproduits.metier.User;
 
 import java.util.ArrayList;
 
-public class AuthentificationBeans {
+public class UserBeans {
     private User user = new User();
     public ArrayList<User> users = new ArrayList<>();
 
