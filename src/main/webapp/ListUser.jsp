@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.gestiondeproduits.AuthentificationBeans" %>
+<%@ page import="com.gestiondeproduits.UserBeans" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="com.gestiondeproduits.metier.User" %>
 <%@ page import="com.gestiondeproduits.UserBeans" %>
