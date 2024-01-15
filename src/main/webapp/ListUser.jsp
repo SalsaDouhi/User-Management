@@ -2,6 +2,7 @@
 <%@ page import="com.gestiondeproduits.AuthentificationBeans" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="com.gestiondeproduits.metier.User" %>
+<%@ page import="com.gestiondeproduits.UserBeans" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -24,7 +25,7 @@
         </thead>
         <tbody>
         <%
-            AuthentificationBeans authBeans = (AuthentificationBeans) request.getAttribute("modele");
+            UserBeans authBeans = (UserBeans) request.getAttribute("modele");
             Iterator<User> users = authBeans.getUsers().iterator();
             while(users.hasNext()) {
                 User u = users.next();
