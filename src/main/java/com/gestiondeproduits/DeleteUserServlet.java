@@ -21,7 +21,7 @@ public class DeleteUserServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("userId"));
 
         Operation o = new Operation();
-        AuthentificationBeans authBeans = new AuthentificationBeans();
+        UserBeans authBeans = new UserBeans();
 
         o.removeUser(id);
         authBeans.setUsers(o.getAll());

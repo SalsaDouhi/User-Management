@@ -21,7 +21,7 @@ public class AuthentificationServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         Operation op = new Operation();
-        AuthentificationBeans authBeans = new AuthentificationBeans();
+        UserBeans authBeans = new UserBeans();
 
         authBeans.setUsers(op.getAll());
         req.setAttribute("modele", authBeans);
@@ -34,15 +34,5 @@ public class AuthentificationServlet extends HttpServlet {
             req.setAttribute("message", "password or username incorrecte");
             req.getRequestDispatcher("").forward(req, resp);
         }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Operation op = new Operation();
-        AuthentificationBeans authBeans = new AuthentificationBeans();
-
-        authBeans.setUsers(op.getAll());
-        req.setAttribute("modele", authBeans);
-        req.getRequestDispatcher("ListUser.jsp").forward(req, resp);
     }
 }

@@ -19,7 +19,7 @@ public class AddUserServlet extends HttpServlet {
 
         User u = new User(username, password);
         Operation op = new Operation();
-        AuthentificationBeans authBeans = new AuthentificationBeans();
+        UserBeans authBeans = new UserBeans();
 
         op.addUser(u);
         authBeans.setUsers(op.getAll());

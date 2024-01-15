@@ -22,7 +22,7 @@ public class ModifyUserServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         Operation o = new Operation();
-        AuthentificationBeans authBeans = new AuthentificationBeans();
+        UserBeans authBeans = new UserBeans();
 
         o.updateUser(id, username, password);
         authBeans.setUsers(o.getAll());
