@@ -21,19 +21,28 @@ public class Operation {
     }
 
     public void removeUser(int id){
-        for(User u:listUser){
-            if(u.getId() == id){
-                try {
-                    Class.forName("com.mysql.jdbc.Driver");
-                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/produit","root","");
-                    PreparedStatement pr = conn.prepareStatement("delete from user where id=?");
-                    pr.setInt(1, id);
-                    pr.execute();
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-                listUser.remove(id);
-            }
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/produit","root","");
+            PreparedStatement pr = conn.prepareStatement("delete from user where id=?");
+            pr.setInt(1, id);
+            pr.execute();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateUser(int id, String username, String password){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/produit","root","");
+            PreparedStatement pr = conn.prepareStatement("UPDATE `user` SET `username`=?,`password`=? WHERE id=?");
+            pr.setString(1, username);
+            pr.setString(2, password);
+            pr.setInt(3, id);
+            pr.execute();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 

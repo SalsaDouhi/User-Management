@@ -22,11 +22,9 @@ public class DeleteUserServlet extends HttpServlet {
 
         Operation o = new Operation();
         AuthentificationBeans authBeans = new AuthentificationBeans();
-        LOGGER.log(Level.INFO, "user id: " + id);
 
         o.removeUser(id);
         authBeans.setUsers(o.getAll());
-        LOGGER.log(Level.INFO, "getall: " + o.getAll());
         req.setAttribute("modele", authBeans);
         req.getRequestDispatcher("ListUser.jsp").forward(req,resp);
     }

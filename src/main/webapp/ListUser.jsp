@@ -35,6 +35,7 @@
             <td><%= u.getPassword() %></td>
             <td>
                 <button class="btn btn-danger" onclick="confirmDelete(<%= u.getId() %>)">Supprimer</button>
+                <a href="updateUser?userId=<%= u.getId() %>" class="btn btn-warning">Modifier</a>
             </td>
         </tr>
         <% } %>
